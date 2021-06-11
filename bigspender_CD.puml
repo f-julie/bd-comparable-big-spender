@@ -1,0 +1,52 @@
+@startuml
+
+class AwsCustomerStatistics {
+  +getTopServiceSpendForEachCustomer() : List<CustomerServiceSpend>
+  +getTopItemizedSpends() : List<CustomerServiceSpend>
+}
+
+class AwsServiceInvoiceDao {
+  +getHighestServiceSpendsForEachCustomer() : List<CustomerServiceSpend>
+  +getAllServiceSpends() : List<CustomerTotalSpend>
+}
+
+class CustomerTotalSpend {
+  +getTotalSpend() : long
+}
+
+class CustomerServiceSpend {
+
+}
+
+class ServiceSpend {
+  -spend: long
+}
+
+class Customer {
+  -name: String
+  -joinDate: LocalDate
+}
+
+enum ServiceType {
+  +DYNAMODB
+  +EC2
+  +ECS
+  +LAMBDA
+  +S3
+  +SAGEMAKER
+  +SNS
+  +SQS
+}
+
+AwsCustomerStatistics o-- AwsServiceInvoiceDao
+
+' types
+CustomerTotalSpend o-- Customer
+CustomerTotalSpend o-- "many" ServiceSpend
+
+CustomerServiceSpend o-- Customer
+CustomerServiceSpend o-- "one" ServiceSpend
+
+ServiceSpend o-- ServiceType
+
+@enduml
