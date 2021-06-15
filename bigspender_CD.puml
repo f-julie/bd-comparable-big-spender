@@ -40,7 +40,7 @@ enum ServiceType {
 
 AwsCustomerStatistics o-- AwsServiceInvoiceDao
 
-' types
+' src.com.amazon.ata.comparable_comparator_sort.bigspender.types
 CustomerTotalSpend o-- Customer
 CustomerTotalSpend o-- "many" ServiceSpend
 
