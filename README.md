@@ -1,12 +1,6 @@
 # Sorting AWS Customer Spending
 
-**Branch name: sorting-classroom**
-
-**RDE workflows:**
-
-* `sort-classroom-customer`
-* `sort-classroom-first-report`
-* `sort-classroom-second-report`
+**GitHub repo:** [ebd-comparable-big-spender](https://github.com/LambdaSchool/ebd-comparable-big-spender)
 
 The AWS Finance team is working on creating a couple of new reports for leadership. Leadership is really interested in
 understanding which AWS customers are our biggest spenders and which services they are spending the most money on.
@@ -66,14 +60,12 @@ Discuss with your group the changes needed.
 ### Implement
 
 Implement the changes in `Customer`. Implement the indicated tests
-in `CustomerTest`. Make sure all tests pass. Run the RDE workflow
-`sort-classroom-customer`, which should now pass.
+in `CustomerTest`. Make sure all tests pass.
 
 **Doneness criteria:**
 - `Customer` implements `Comparable`
 - Unimplemented `CustomerTest` unit tests are written
 - `CustomerTest` unit tests all pass
-- `sort-classroom-customer` RDE workflow passes
 
 ## Largest single service spend per customer
 
@@ -139,9 +131,7 @@ completeness in production, but let's not spend our time on them here).
 Now that our `Comparable` is ready for use let’s implement the
 `getTopServiceSpendForEachCustomer` method in the `AwsCustomerStatistics`
 class. Take a look at the Javadoc for the method to get started.
-When you think you have a working solution, try running the
-`sort-classroom-first-report` workflow to validate. You can also
-run the `GetTopTotalSpendsTest` class directly in IntelliJ.
+When you think you have a working solution, run the `GetTopTotalSpendsTest` class directly in IntelliJ.
 
 **Doneness criteria:**
 - You've made `CustomerServiceSpend` `Comparable`
@@ -151,7 +141,6 @@ run the `GetTopTotalSpendsTest` class directly in IntelliJ.
 - You've implemented `getTopServiceSpendForEachCustomer` to sort
   `CustomerServiceSpend` returned by `getHighestServiceSpends` by
   customer name, then join date.
-- `sort-classroom-first-report` RDE workflow passes
 
 ## Spend Across Services
 
@@ -223,13 +212,12 @@ compare? What are the sorting rules?
 Implement your solution and write tests for your implementation.
 
 If you create any `Comparator` class(es), put it/them in a new `compare` package
-under `com.amazon.ata.comparable_comparator_sort.classroom.bigspender`.
+under `com.amazon.ata.comparable_comparator_sort.bigspender`.
 
 ### Now implement the report
 
 Implement `AwsCustomerStatistics`'s `getTopItemizedSpends` method, using your
-comparison logic implementation above. `sort-classroom-second-report` should pass.
-You can also run the `GetTopItemizedSpendsTest` test directly in IntelliJ.
+comparison logic implementation above. `GetTopItemizedSpendsTest` test should pass.
 
 **Doneness criteria:**
 - You've implemented logic to satisfy the ordering requirements above
@@ -238,7 +226,7 @@ You can also run the `GetTopItemizedSpendsTest` test directly in IntelliJ.
   to implement descending logic based on this convention)
 - You have created unit tests for any new classes you have created
 - You have implemented the `getTopItemizedSpends` method
-- `sort-classroom-second-report` tests pass
+- `GetTopItemizedSpendsTest` test passes.
 
 ## Extensions
 
