@@ -2,6 +2,8 @@
 
 **GitHub repo:** [ebd-comparable-big-spender](https://github.com/LambdaSchool/ebd-comparable-big-spender)
 
+## Background
+
 The AWS Finance team is working on creating a couple of new reports for leadership. Leadership is really interested in
 understanding which AWS customers are our biggest spenders and which services they are spending the most money on.
 
@@ -55,7 +57,7 @@ are equal.
 
 ### Design
 
-Discuss with your group the changes needed.
+Take a moment to consider the changes that will be needed.
 
 ### Implement
 
@@ -104,7 +106,7 @@ because the customer names are ordered "nedflix", "pinteresting", "reddthem".
 
 ### Design
 
-Take a moment to discuss as a group which changes are needed
+Take a moment to think about which changes are needed
 to achieve this ordering. When you’re ready we’ll discuss as a class.
 
 ### Implement `Comparable`
@@ -203,8 +205,8 @@ to be descending, please see `Comparator.reversed()`, which you can
 call on an existing object that is-a `Comparator`. This is the
 recommended way to provide descending orderings.
 
-Discuss with your group whether to use/implement `Comparable` on any classes,
-or whether `Comparator`(s) is/are needed. If so, what should it/they
+Should we use/implement `Comparable` on any classes,
+and are `Comparator`(s) needed. If so, what should it/they
 compare? What are the sorting rules?
 
 ### Implement comparison logic
