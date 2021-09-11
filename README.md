@@ -1,7 +1,5 @@
 # Sorting AWS Customer Spending
 
-**GitHub repo:** [ebd-comparable-big-spender](https://github.com/LambdaSchool/ebd-comparable-big-spender)
-
 ## Background
 
 The AWS Finance team is working on creating a couple of new reports for leadership. Leadership is really interested in
