@@ -11,12 +11,15 @@ class CustomerTest {
     private Customer nedflixCustomer;
     private LocalDate nedflixJoinDate;
     private LocalDate laterJoinDate;
+    private LocalDate earlierJoinDate;
 
     @BeforeEach
     void setUp() throws Exception {
         nedflixJoinDate = LocalDate.of(2008, 10, 11);
         laterJoinDate = LocalDate.of(2009, 1, 1);
         nedflixCustomer = new Customer("nedflix", nedflixJoinDate);
+        earlierJoinDate = LocalDate.of(2007, 1, 1);
+
     }
 
     // PARTICIPANTS: add implementations to these tests of compareTo:
@@ -24,51 +27,61 @@ class CustomerTest {
     @Test
     void compareTo_withAnEqualCustomer_returnsZero() {
         // GIVEN
+        Customer equalCustomer = new Customer("nedflix", nedflixJoinDate);
 
         // WHEN
+        int result = nedflixCustomer.compareTo(equalCustomer);
 
         // THEN
-        fail("Test not implemented yet!");
+        assertEquals(0, result, "Expected compareTo to return 0 for equal customer");
     }
 
     @Test
     void compareTo_withLaterCustomerName_returnsNegative() {
         // GIVEN
+        Customer customerWithLaterName = new Customer("tedflix", nedflixJoinDate);
 
         // WHEN
+        int result = nedflixCustomer.compareTo(customerWithLaterName);
 
         // THEN
-        fail("Test not implemented yet!");
+        assertTrue(result < 0, "Expected compareTo to return negative for customer with later name");
     }
 
     @Test
     void compareTo_withEarlierCustomerName_returnsPositive() {
         // GIVEN
+        Customer customerWithEarlierName = new Customer("frankflix", nedflixJoinDate);
 
         // WHEN
+        int result = nedflixCustomer.compareTo(customerWithEarlierName);
 
         // THEN
-        fail("Test not implemented yet!");
+        assertTrue(result > 0, "Expected compareTo to return positive for customer with earlier name");
     }
 
     @Test
     void compareTo_withSameCustomerNameLaterJoinDate_returnsNegative() {
         // GIVEN
+        Customer customerWithSameNameLaterJoinDate = new Customer("nedflix", laterJoinDate);
 
         // WHEN
+        int result = nedflixCustomer.compareTo(customerWithSameNameLaterJoinDate);
 
         // THEN
-        fail("Test not implemented yet!");
+        assertTrue(result < 0, "Expected compareTo to return negative for same customer name with later join date");
     }
 
     @Test
     void compareTo_withSameCustomerNameEarlierJoinDate_returnsPositive() {
         // GIVEN
+        Customer customerWithSameNameEarlierJoinDate = new Customer("nedflix", earlierJoinDate);
 
         // WHEN
+        int result = nedflixCustomer.compareTo(customerWithSameNameEarlierJoinDate);
 
         // THEN
-        fail("Test not implemented yet!");
+        assertTrue(result > 0, "Expected compareTo to return positive for same customer name with earlier join date");
     }
 
     // PARTICIPANTS: leave these tests below alone
